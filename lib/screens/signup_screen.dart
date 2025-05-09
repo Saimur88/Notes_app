@@ -1,17 +1,17 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:notes_app/screens/signup_screen.dart';
+import 'package:get/get.dart';
+import 'package:notes_app/screens/login_screen.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Center(child: Text("Log In")),
+        title: Center(child: Text("Sign Up")),
         actions: [
           Icon(Icons.more_vert)
         ],
@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
               Container(
                 height: 300,
                 alignment: Alignment.center,
-                child: Lottie.asset("assets/animations/login.json"),
+                child: Lottie.asset("assets/animations/signup.json"),
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -54,10 +54,10 @@ class LoginScreen extends StatelessWidget {
               ElevatedButton(onPressed: (){
                 print("Log In Button Pressed");
               },
-                  child: Text("Log in",style: TextStyle(color: Colors.white),),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueAccent
-              )
+                  child: Text("Sign in",style: TextStyle(color: Colors.white),),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueAccent
+                  )
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -65,11 +65,11 @@ class LoginScreen extends StatelessWidget {
               ),
               GestureDetector(
                   onTap: (){
-                    Get.to(()=> SignupScreen());
+                    Get.to(()=> LoginScreen());
                   },
-                  child: Text("Don't have an account Sign Up")),
-        
-        
+                  child: Text("Already have an account Log in")),
+
+
             ],
           ),
         ),
