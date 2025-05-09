@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "49173132103",
+    "project_id": "note-app-cd659",
+    "storage_bucket": "note-app-cd659.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49173132103:android:fc070d23689271b76cd262",
+        "android_client_info": {
+          "package_name": "com.example.notes_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpkBU2wkDH6alzHBLTOGq-pKSSoefRo8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
