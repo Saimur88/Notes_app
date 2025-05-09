@@ -3,15 +3,15 @@ import 'package:lottie/lottie.dart';
 import 'package:get/get.dart';
 import 'package:notes_app/screens/login_screen.dart';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+class RecoveryScreen extends StatelessWidget {
+  const RecoveryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueAccent,
-        title: Center(child: Text("Sign Up")),
+        title: Center(child: Text("Recovery")),
         actions: [
           Icon(Icons.more_vert)
         ],
@@ -24,7 +24,13 @@ class SignupScreen extends StatelessWidget {
               Container(
                 height: 300,
                 alignment: Alignment.center,
-                child: Lottie.asset("assets/animations/signup.json"),
+                child: Lottie.asset("assets/animations/forgot_pass.json"),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text("Enter your email To recieve OTP")),
               ),
               Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -38,35 +44,23 @@ class SignupScreen extends StatelessWidget {
                   keyboardType: TextInputType.emailAddress,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.password_outlined),
-                    suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                    border: OutlineInputBorder(),
-                    label: Text("Password"),
-                  ),
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                ),
-              ),
+
               ElevatedButton(onPressed: (){
                 print("Log In Button Pressed");
               },
-                  child: Text("Sign in",style: TextStyle(color: Colors.white),),
+                  child: Text("Send Code",style: TextStyle(color: Colors.white),),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blueAccent
                   )
               ),
-              GestureDetector(
-                  onTap: (){
-                    Get.to(()=> LoginScreen());
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Text("Already have an account Log in"),
-                  )),
+              Padding(
+                padding: EdgeInsets.all(10.0),
+                child: GestureDetector(
+                    onTap: (){
+                      Get.to(()=> LoginScreen());
+                    },
+                    child: Text("Go back to Log in page")),
+              ),
 
 
             ],

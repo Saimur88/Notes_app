@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:notes_app/screens/recovery_screen.dart';
 import 'package:notes_app/screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -59,9 +60,14 @@ class LoginScreen extends StatelessWidget {
                 backgroundColor: Colors.blueAccent
               )
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Text("Forgot password"),
+              GestureDetector(
+                onTap: (){
+                  Get.to(() => RecoveryScreen() );
+                },
+                child: Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Text("Forgot password"),
+                ),
               ),
               GestureDetector(
                   onTap: (){
