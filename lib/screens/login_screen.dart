@@ -72,7 +72,15 @@ class LoginScreen extends StatelessWidget {
                 onTap: (){
                   Get.to(()=> SignupScreen());
                 },
-                child: Text("Don't have an account Sign Up")),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+
+                  children: [
+                    Text("Don't have an account"),
+                    SizedBox(width: 5,),
+                    Text("Sign Up",style: TextStyle(color: Colors.blueAccent),),
+                  ],
+                )),
 
 
           ],
