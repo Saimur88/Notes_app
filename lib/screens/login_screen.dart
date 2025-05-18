@@ -19,65 +19,63 @@ class LoginScreen extends StatelessWidget {
       ),
 
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              Container(
-                height: 300,
-                alignment: Alignment.center,
-                child: Lottie.asset("assets/animations/login.json"),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.email_outlined),
-                    hintText: 'example@email.com',
-                    label: Text("Email"),
-                    border: OutlineInputBorder(),
-                  ),
-                  keyboardType: TextInputType.emailAddress,
+        child: Column(
+          children: [
+            Container(
+              height: 300,
+              alignment: Alignment.center,
+              child: Lottie.asset("assets/animations/login.json"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email_outlined),
+                  hintText: 'example@email.com',
+                  label: Text("Email"),
+                  border: OutlineInputBorder(),
                 ),
+                keyboardType: TextInputType.emailAddress,
               ),
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.password_outlined),
-                    suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                    border: OutlineInputBorder(),
-                    label: Text("Password"),
-                  ),
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.password_outlined),
+                  suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                  border: OutlineInputBorder(),
+                  label: Text("Password"),
                 ),
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
               ),
-              ElevatedButton(onPressed: (){
-                print("Log In Button Pressed");
+            ),
+            ElevatedButton(onPressed: (){
+
+            },
+                child: Text("Log in",style: TextStyle(color: Colors.white),),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blueAccent
+            )
+            ),
+            GestureDetector(
+              onTap: (){
+                Get.to(() => RecoveryScreen() );
               },
-                  child: Text("Log in",style: TextStyle(color: Colors.white),),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueAccent
-              )
+              child: Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Text("Forgot password"),
               ),
-              GestureDetector(
+            ),
+            GestureDetector(
                 onTap: (){
-                  Get.to(() => RecoveryScreen() );
+                  Get.to(()=> SignupScreen());
                 },
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text("Forgot password"),
-                ),
-              ),
-              GestureDetector(
-                  onTap: (){
-                    Get.to(()=> SignupScreen());
-                  },
-                  child: Text("Don't have an account Sign Up")),
-        
-        
-            ],
-          ),
+                child: Text("Don't have an account Sign Up")),
+
+
+          ],
         ),
       ),
 

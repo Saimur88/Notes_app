@@ -12,6 +12,8 @@ class SignupScreen extends StatelessWidget {
   TextEditingController emailIdController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
+  User? currentUser = FirebaseAuth.instance.currentUser;
+
    SignupScreen({super.key});
 
   @override
@@ -106,6 +108,15 @@ class SignupScreen extends StatelessWidget {
                 FirebaseAuth.instance.createUserWithEmailAndPassword(
                     email: userEmail, password: userPass).then((onValue)=> {
                       log('Successfuly User Created'),
+                  FirebaseFirestore.instance.collection("users").doc().set({
+                    'createdAt' : DateTime.now(),
+                    'userName' : userName,
+                    'userEmail' : userEmail,
+                    'userPass' : userPass,
+                    'userId' : currentUser!.uid,
+
+
+                  })
                 });
               },
                   child: Text("Sign in",style: TextStyle(color: Colors.white),),

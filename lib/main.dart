@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/screens/login_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
+import 'package:notes_app/screens/start_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,7 @@ class NotesApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const LoginScreen(),
+      home: const StartScreen(),
 
     );
   }
