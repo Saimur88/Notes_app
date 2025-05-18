@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:notes_app/screens/recovery_screen.dart';
@@ -58,35 +57,33 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               ElevatedButton(onPressed: (){
-
               },
-                  child: Text("Log in",style: TextStyle(color: Colors.white),),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueAccent
-              )
-              ),
-              GestureDetector(
-                onTap: (){
-                  Get.to(() => RecoveryScreen() );
-                },
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Text("Forgot password"),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blueAccent
                 ),
-              ),
-              GestureDetector(
-                  onTap: (){
-                    Get.to(()=> SignupScreen());
-                  },
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  child: Text("Log in",style: TextStyle(color: Colors.white),),
 
-                    children: [
-                      Text("Don't have an account"),
-                      SizedBox(width: 5,),
-                      Text("Sign Up",style: TextStyle(color: Colors.blueAccent),),
-                    ],
-                  )),
+              ),
+              TextButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> RecoveryScreen()));
+                },
+                  child: Text("Forgot password",style: TextStyle(
+                    color: Colors.blueAccent,
+                    fontSize: 15,
+                  ),)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+
+                children: [
+                  Text("Don't have an account"),
+                  TextButton(
+                    onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> SignupScreen()));
+                    },
+                    child: Text("Sign Up",style: TextStyle(color: Colors.blueAccent),)),
+                ],
+              ),
 
 
             ],

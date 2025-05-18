@@ -123,19 +123,26 @@ class SignupScreen extends StatelessWidget {
                     })
                   });
                 },
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueAccent
+                  ),
                     child: Text("Sign in",style: TextStyle(color: Colors.white),),
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueAccent
-                    )
+
                 ),
-                GestureDetector(
-                    onTap: (){
-                      Get.to(()=> LoginScreen());
-                    },
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: Text("Already have an account Log in"),
-                    )),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Already have an account"),
+                      TextButton(
+                          onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
+                          },
+                          child: Text("Log in",style: TextStyle(color: Colors.blueAccent)),),
+                    ],
+                  ),
+                ),
 
 
               ],
